@@ -15,19 +15,19 @@
     <% end %>
 
     <div class="form-group">
-      <p>
-        <%= f.label :title %><br>
-        <%= f.text_field :title %>
-      </p>
 
-      <p>
-        <%= f.label :text %><br>
-        <%= f.text_area :text, :html => {:class => "form-control"} %>
-      </p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
 
-      <p>
-        <%= f.submit :html => {:class => "btn btn-default"} %>
-      </p>
+
+    <div class="form-group">
+      <%= f.label :text %><br>
+      <%= f.text_area :text, :class => "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit :class => "btn btn-default" %>
     </div>
 
 <% end %>
