@@ -1,10 +1,9 @@
 <h1>Edit article</h1>
- 
+
 <%= render 'form' %>
 
-<td><%= link_to 'Delete', article_path(@article), 
-		method: :delete,
-		data: { confirm: 'Are you sure?' } %></td>
-<br>
-<br>
-<%= link_to 'Back', articles_path %>
+<div class="container">
+  <td><%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-default" %></td>
+</div>
+
+<%= link_to 'Back', articles_path, :class => "btn btn-default" %>
