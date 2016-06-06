@@ -3,7 +3,7 @@
     <%= @article.title %>
   </h2>
 
-  <%= @article.text %>
+  <%= @article.text.html_safe %>
 
   <br/>
   <hr/>
@@ -13,7 +13,7 @@
 
       <strong>Commenter:</strong>
       <%= comment.commenter %>
-      <%= comment.body %>
+      <%= comment.body.html_safe %>
       <br/>
 
   <% end %>
