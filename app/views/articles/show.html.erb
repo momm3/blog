@@ -7,8 +7,8 @@
     <%= @article.text %>
   </p>
 
-  <hr/>
   <br/>
+  <hr/>
 
   <h3>Comments</h3>
   <% @article.comments.each do |comment| %>
@@ -42,13 +42,13 @@
   <% end %>
 </div>
 
-<hr/>
 <br/>
+<hr/>
 
 <div class="container">
   <%= link_to 'Edit', edit_article_path(@article), :class => "btn btn-default" %>
   <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-default" %>
-  <br/><%= link_to 'Back', articles_path, :class => "btn btn-default" %>
+  <br/><br/>
+  <%= link_to 'Back', articles_path, :class => "btn btn-default" %>
 </div>
-<br/>
 
