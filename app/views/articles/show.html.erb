@@ -1,45 +1,51 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
- 
-<h2>Comments</h2>
-<% @article.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
- 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-<% end %>
- 
-<h2>Add a comment:</h2>
-<%= form_for([@article, @article.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="container">
+  <h2>
+    <%= @article.title %>
+  </h2>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<td><%= link_to 'Delete', article_path(@article), 
-		method: :delete,
-		data: { confirm: 'Are you sure?' } %></td>
-<br>
-<br>
-<%= link_to 'Back', articles_path %>
+  <%= @article.text.html_safe %>
+
+  <br/>
+  <hr/>
+
+  <h3>Comments</h3>
+  <% @article.comments.each do |comment| %>
+
+      <strong>Commenter:</strong>
+      <%= comment.commenter %><br/>
+      <%= comment.body.html_safe %>
+      <br/><br/>
+
+  <% end %>
+</div>
+
+<hr/>
+
+<div class="container">
+  <h2>Add a comment:</h2><br/>
+  <%= form_for([@article, @article.comments.build]) do |f| %>
+      <div class="form-group">
+        <%= f.label :commenter %><br>
+        <%= f.text_field :commenter, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :body %><br>
+        <%= f.text_area :body, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit :class => "btn btn-default" %>
+      </div>
+  <% end %>
+</div>
+
+<br/>
+<hr/>
+
+<div class="container">
+  <%= link_to 'Edit', edit_article_path(@article), :class => "btn btn-default" %>
+  <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-default" %>
+  <br/><br/>
+  <%= link_to 'Back', articles_path, :class => "btn btn-default" %>
+  <br/><br/>
+</div>
+
