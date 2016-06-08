@@ -15,20 +15,13 @@
     <% end %>
 
     <div class="form-group">
-
       <%= f.label :title %><br>
       <%= f.text_field :title, :class => "form-control" %>
     </div>
 
     <div class="form-group">
       <%= f.label :text %><br>
-
-      <%= f.text_area :text, :class => "form-control textarea" %>
-      <script>
-        $('#modal').on('shown.bs.modal', function () {
-          $('#textarea').wysihtml5();
-        });
-      </script>
+      <%= f.input :text, as: :wysihtml5, :class => "form-control" %>
     </div>
 
     <div class="form-group">
