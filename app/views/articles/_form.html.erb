@@ -15,14 +15,12 @@
     <% end %>
 
     <div class="form-group">
-      <%= f.label :title %><br>
+      <%= f.label :title %><br/>
       <%= f.text_field :title, :class => "form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :text %><br>
-      <%#<%= f.text_field :text, as: :wysihtml5, :class => "form-control" %>
-
+      <%= f.label :text %><br/>
       <%= f.text_area :text, :class => "form-control wysihtml5" %>
     </div>
 
