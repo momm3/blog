@@ -19,7 +19,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-.wysihtml5 li {
+.wysihtml5-toolbar ul li {
     list-style: none;
     float: right;
 }
